@@ -10,4 +10,4 @@ before_install:
 
 #execute commands to run test suites
 script:
-    - docker run nevaehtang/docker-react npm run test -- --coverage
+    - docker run -e CI=true nevaehtang/docker-react npm run test
