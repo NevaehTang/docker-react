@@ -1,0 +1,13 @@
+sudo: required
+language: generic
+services:
+    - docker
+
+#execute commands before run test suites
+before_install:
+    - docker build -t nevaehtang/docker-react -f Dockerfile.dev .
+
+
+#execute commands to run test suites
+script:
+    - docker run nevaehtang/docker-react npm run test -- --coverage
